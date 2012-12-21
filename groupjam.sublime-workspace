@@ -1,0 +1,558 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Enco",
+				"EncoderPRFKeyOffset"
+			],
+			[
+				"random",
+				"randomBytes"
+			],
+			[
+				"RSAKey",
+				"RSAKeyPair"
+			],
+			[
+				"parent_group",
+				"parent_group_id"
+			],
+			[
+				"show",
+				"show"
+			],
+			[
+				"repeat",
+				"repeat-x"
+			],
+			[
+				"UserEdit",
+				"UserEditModelForm"
+			],
+			[
+				"login",
+				"login_required"
+			],
+			[
+				"lo",
+				"logout"
+			],
+			[
+				"new-st",
+				"new-status-comment"
+			],
+			[
+				"new-stat",
+				"new-status-comment-box"
+			],
+			[
+				"comment",
+				"comment"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"git blame",
+				"Git: Blame"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"django",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Discover Packages"
+			],
+			[
+				"git bl",
+				"Git: Blame"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"git bla",
+				"Git: Blame"
+			],
+			[
+				"tid",
+				"Tidy HTML"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"tidy",
+				"Tidy HTML"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"prett",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"pret",
+				"HTMLPrettify: Prettify"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"Packa",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rodrigomenezes/Code/uberapp/schema.sql",
+		"/Users/rodrigomenezes/Code/badstartups/badstartups/views.py",
+		"/Users/rodrigomenezes/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/rodrigomenezes/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/rodrigomenezes/Code/infosec/assgn4/PersistentMemory.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn4/README",
+		"/Users/rodrigomenezes/Code/infosec/assgn4/EncoderSecrets.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn4/MachineSecrets.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn4/Encoder.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/Util432s.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/SecureChannelTest.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/InsecureChannelDebug.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/InsecureChannel.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/ChannelTest.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn3/SecureChannel.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/RSAKeyPair.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/DHConstants.java",
+		"/Users/rodrigomenezes/rmenez.es/syte/templates/base.html",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/KeyExchange.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/RSAKey.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/PRGen.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/PRF.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/DataSealer.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/DataUnsealer.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/StreamCryptor.java",
+		"/Users/rodrigomenezes/Code/infosec/assgn2/TrueRandomness.java",
+		"/Users/rodrigomenezes/upright/uprightapp/models.py",
+		"/Users/rodrigomenezes/upright/uprightapp/views/group_views.py",
+		"/Users/rodrigomenezes/upright/uprightapp/views/comment_views.py",
+		"/Users/rodrigomenezes/upright/templates/splash.html",
+		"/Users/rodrigomenezes/upright/static/css/style.css",
+		"/Users/rodrigomenezes/upright/uprightapp/admin.py",
+		"/Users/rodrigomenezes/Downloads/latex_hw_template.tex",
+		"/Users/rodrigomenezes/upright/venv/lib/python2.7/site-packages/debug_toolbar/media/debug_toolbar/css/._toolbar.css",
+		"/Users/rodrigomenezes/upright/templates/registration/register_person.html",
+		"/Users/rodrigomenezes/upright/todo.txt",
+		"/Users/rodrigomenezes/upright/accounts/urls.py",
+		"/Users/rodrigomenezes/upright/accounts/forms.py",
+		"/Users/rodrigomenezes/upright/templates/registration/register_organization.html",
+		"/Users/rodrigomenezes/upright/templates/registration/login.html",
+		"/Users/rodrigomenezes/upright/templates/registration/confirm.html",
+		"/Users/rodrigomenezes/upright/templates/registration/base.html",
+		"/Users/rodrigomenezes/upright/uprightapp/views/status_views.py",
+		"/Users/rodrigomenezes/upright/uprightapp/views/notification_views.py",
+		"/Users/rodrigomenezes/upright/accounts/views.py",
+		"/Users/rodrigomenezes/upright/templates/navbar.html",
+		"/Users/rodrigomenezes/upright/templates/status.html",
+		"/Users/rodrigomenezes/upright/upright/settings.py",
+		"/Users/rodrigomenezes/upright/uprightapp/views/tree_views.py",
+		"/Users/rodrigomenezes/upright/venv/bin/django-admin.py",
+		"/Users/rodrigomenezes/upright/accounts/models.py",
+		"/Users/rodrigomenezes/upright/uprightapp/forms.py",
+		"/Users/rodrigomenezes/upright/uprightapp/croppable/utils.py",
+		"/Users/rodrigomenezes/upright/templates/group_subgroup.html",
+		"/Users/rodrigomenezes/upright/templates/group.html",
+		"/Users/rodrigomenezes/upright/templates/breadcrumbs.html",
+		"/Users/rodrigomenezes/upright/templates/profile.html",
+		"/Users/rodrigomenezes/upright/templates/base.html",
+		"/Users/rodrigomenezes/upright/static/js/status-control.js",
+		"/Users/rodrigomenezes/upright/uprightapp/views/helper_functions.py",
+		"/Users/rodrigomenezes/upright/templates/tree/tree_group.html",
+		"/Users/rodrigomenezes/upright/templates/tree/tree.html",
+		"/Users/rodrigomenezes/upright/README",
+		"/Users/rodrigomenezes/upright/uprightapp/views/profile_views.py",
+		"/Users/rodrigomenezes/upright/templates/tree/base.html",
+		"/Users/rodrigomenezes/upright/templates/group_person.html",
+		"/Users/rodrigomenezes/upright/static/js/jquery.mjs.nestedSortable.js",
+		"/Users/rodrigomenezes/upright/upright/urls.py",
+		"/Users/rodrigomenezes/upright/uprightapp/views/__init__.py",
+		"/Users/rodrigomenezes/upright/uprightapp/__init__.py",
+		"/Users/rodrigomenezes/upright/static/css/bootstrap.min.css.old",
+		"/Users/rodrigomenezes/upright/static/js/bootstrap.min.js.old",
+		"/Users/rodrigomenezes/upright/static/js/jquery.simplemodal.js",
+		"/Users/rodrigomenezes/upright/static/js/bootstrap.min.js.no_modal",
+		"/Users/rodrigomenezes/upright/static/js/bootstrap.min.js",
+		"/Users/rodrigomenezes/upright/static/js/jquery.simplemodal.js.old.js",
+		"/Users/rodrigomenezes/upright/uprightapp/views/setting_views.py",
+		"/Users/rodrigomenezes/upright/templates/settings/administrator_access.html",
+		"/Users/rodrigomenezes/upright/templates/settings/billing.html",
+		"/Users/rodrigomenezes/upright/templates/settings/base.html",
+		"/Users/rodrigomenezes/upright/templates/settings/profile.html",
+		"/Users/rodrigomenezes/upright/templates/settings/notifications.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/tree_history.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/tree_group.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/tree.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/base.html",
+		"/Users/rodrigomenezes/upright/templates/settings/account.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/billing.html",
+		"/Users/rodrigomenezes/upright/uprightapp/views/control_panel_views.py",
+		"/Users/rodrigomenezes/upright/templates/control_panel/test.html",
+		"/Users/rodrigomenezes/upright/templates/comment_text.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel/settings.html",
+		"/Users/rodrigomenezes/upright/templates/settings.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel_base.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel_tree.html",
+		"/Users/rodrigomenezes/upright/templates/control_panel_tree_group.html",
+		"/Users/rodrigomenezes/upright/upright/s3utils.py",
+		"/Users/rodrigomenezes/upright/templates/groupbar.html",
+		"/Users/rodrigomenezes/upright/css/style.css",
+		"/Users/rodrigomenezes/upright/templates/500.html",
+		"/Users/rodrigomenezes/upright/templates/404.html",
+		"/Users/rodrigomenezes/upright/static/croppable/js/cropped_image_admin.js",
+		"/Users/rodrigomenezes/upright/uprightapp/tests.py",
+		"/Users/rodrigomenezes/upright/upright/S3.py",
+		"/Users/rodrigomenezes/upright/templates/registration/confirmation_email.html",
+		"/Users/rodrigomenezes/upright/templates/statuses.html",
+		"/Users/rodrigomenezes/upright/templates/comment.html",
+		"/Users/rodrigomenezes/upright/templates/group_status.html",
+		"/Users/rodrigomenezes/upright/uprightapp/croppable/forms.py",
+		"/Users/rodrigomenezes/upright/uprightapp/croppable/fields.py",
+		"/Users/rodrigomenezes/upright/templates/group_status_bleah.html",
+		"/Users/rodrigomenezes/upright/templates/group_status_box.html",
+		"/Users/rodrigomenezes/upright/templates/multi_status.html",
+		"/Users/rodrigomenezes/upright/templates/multi_status_bleah.html",
+		"/Users/rodrigomenezes/upright/media/cache/media/people/Screen_Shot_2012-07-30_at_5.35.48_AM_picture_cropped.png",
+		"/Users/rodrigomenezes/upright/media/cache/media/people/edkelley_picture_cropped.jpg",
+		"/Users/rodrigomenezes/upright/uprightapp/croppable/__init__.py",
+		"/Users/rodrigomenezes/upright/templates/multi_status_box.html",
+		"/Users/rodrigomenezes/upright/uprightapp/croppable/widgets.py",
+		"/Users/rodrigomenezes/upright/uprightapp/template_tags/__init__.py",
+		"/Users/rodrigomenezes/upright/uprightapp/template_tags/human_date.py",
+		"/Users/rodrigomenezes/upright/static/js/jquery.urlize.js",
+		"/Users/rodrigomenezes/upright/static/css/basic.css",
+		"/Users/rodrigomenezes/upright/upright/.Python",
+		"/Users/rodrigomenezes/upright/uprightapp/views/multi_status_views.py",
+		"/Users/rodrigomenezes/upright/templates/status-comments.html",
+		"/Users/rodrigomenezes/upright/static/js/TextAreaExpander.js",
+		"/Users/rodrigomenezes/upright/templates/comment-text.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"",
+			"tree_views.py",
+			"",
+			"jquery.simplemodal.js",
+			"jquery.simplemodal.ks",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"PRFKey",
+			"PRFKe",
+			"PRFKey",
+			"StateOf",
+			"MachinePublicK",
+			"arraycop",
+			"arraycopy",
+			"read()",
+			"read()[0]",
+			"read()[0}",
+			"inStr",
+			"sendCount",
+			"num",
+			"PRFnu",
+			"RandomBytes",
+			"PaddingBytes",
+			"paddingBytes",
+			"randomBytes",
+			"paddingByt",
+			"paddingByte",
+			"println",
+			"urlpatterns",
+			"comment-b",
+			"comment-",
+			".dblclick",
+			"Notification",
+			"register_email.html",
+			"DoesNotExist",
+			"disableEn",
+			"disableEnter",
+			"disableEn",
+			"13px",
+			"parent_group",
+			"parent_g",
+			"modalRemoveG",
+			"remove",
+			"Http",
+			".append",
+			"entity.",
+			"persons",
+			"cleaned",
+			"STATIC",
+			"STATI",
+			"CURRENT_D",
+			"static",
+			"subgroups",
+			"subgrou",
+			".subgroups",
+			"edit",
+			"remove-con",
+			"old_str",
+			"old_stur",
+			"comment-bod",
+			"top-bar",
+			"h3",
+			"h2",
+			"modal",
+			"d.modal",
+			"path_",
+			"control_panel/tre",
+			"control_p",
+			"left",
+			"serializ",
+			"toHier",
+			"item_id",
+			"profile-c",
+			"normal",
+			"attr",
+			"prop",
+			"attr",
+			"error",
+			"splash",
+			"s",
+			"splash",
+			"/splash",
+			"/static",
+			"DEBUG",
+			"PRODUCT",
+			"DATABASES",
+			"btn-row",
+			"top-bt",
+			"after",
+			"console.lo",
+			"loadLo",
+			"jcrop-hol",
+			"subgr",
+			"groups",
+			".groups",
+			"group.groups",
+			"delete",
+			".group-",
+			"group-status",
+			"group-st",
+			"group_status_indiv",
+			"status",
+			"status-text",
+			"status-box",
+			"hr",
+			"group_status",
+			"group-status",
+			"group_status",
+			"multi_status",
+			"multi-status",
+			"multistatus",
+			"multi-status",
+			"multi_status",
+			"multi",
+			"multi_",
+			"multi",
+			"croppable.",
+			"team",
+			"value_",
+			"getJcrop",
+			"croppable",
+			"person.i",
+			"de_urli",
+			"sentine",
+			"urlize",
+			"urlize\\",
+			"urlize",
+			"comment_ed",
+			"submit_status",
+			"submit_comment",
+			"submit",
+			".status-box",
+			"status-text",
+			"stdimage",
+			"delete"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"RANDOM_BYTES",
+			"PADDING_BYTES",
+			"parent",
+			"d.simplemodal"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				".css",
+				"venv/lib/python2.7/site-packages/debug_toolbar/media/debug_toolbar/css/._toolbar.css"
+			],
+			[
+				"st",
+				"static/css/style.css"
+			],
+			[
+				"models",
+				"uprightapp/models.py"
+			],
+			[
+				"model",
+				"accounts/models.py"
+			],
+			[
+				"grou",
+				"uprightapp/views/group_views.py"
+			],
+			[
+				"style",
+				"static/css/style.css"
+			],
+			[
+				"status-",
+				"static/js/status-control.js"
+			],
+			[
+				"pro",
+				"templates/profile.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 241.0,
+	"status_bar_visible": true
+}
