@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="container">
+    <div class="groups_content">
+        <div class="groups_top">
+            <div class="groups_filter btn-group">
+                <a class="btn btn-primary">All</a>
+                    <a class="btn" data-toggle="dropdown" href="#">Other <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menezes Family</a></li>
+                        <li><a href="#">Charter Club</a></li>
+                    </ul>
+            </div>
+
+            <div class="feed_type btn-group pull-right">
+                <button class="btn btn-primary">Feed</button>
+                <button class="btn btn">Threads</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div id="create_thread"></div>
+
+        </div>
+
+        <hr style="width: 570px; margin: 10px 0;"/>
+
+        {% include "feed.html" %}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% include "editor_view.html" %}
+
+<script>
+    var thread_view = new ThreadView({ el: $("#create_thread") });
+</script>
+{% endblock %}

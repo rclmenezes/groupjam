@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="container">
+    <div class="groups_content">
+        <div class="groups_top">
+            <div class="groups_filter btn-group">
+                <a class="btn btn-primary">All</a>
+                    <a class="btn" data-toggle="dropdown" href="#">Other <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Menezes Family</a></li>
+                        <li><a href="#">Charter Club</a></li>
+                    </ul>
+            </div>
+
+            <div class="feed_type btn-group pull-right">
+                <button class="btn btn-primary">Feed</button>
+                <button class="btn btn">Threads</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div id="create_thread" class="box post_editor">
+                <div class="box_picture">
+                    <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+                </div>
+                <div class="box_container post_editor_before">
+                    <div id="create_thread_editor" class="post_editor_input" contenteditable="True">
+                        Create a new thread...
+                    </div>
+                    <div id="create_thread_buttons" class="post_editor_buttons">
+                        <a class="post_button" title="Share a file"><i class="icon-paper-clip"></i></a>
+                        <a class="post_button" title="Share a link"><i class="icon-link"></i></a>
+                        <a class="post_button" title="Share a picture"><i class="icon-camera"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr style="width: 570px; margin: 10px 0;"/>
+
+        {% include "feed.html" %}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function() {
+        var $post_editor = $('.post_editor');
+        makeEditor($post_editor);
+
+        function makeEditor($post_editor)
+        {
+            var $post_editor_before = $post_editor.children('.post_editor_before');
+            if (!$post_editor || !$post_editor_before)
+            {
+                return;
+            }
+
+            $post_editor_before.after('<div class="box_container post_editor_after">\
+                <div class="post_editor_input" contenteditable="true">\
+                </div>\
+                <button class="btn">Submit</button>\
+                <div class="post_editor_buttons">\
+                    <a class="post_button make_italic" title="Italic">\
+                        <i class="icon-italic"></i>\
+                    </a>\
+                    <a class="post_button make_underline" title="Underline">\
+                        <i class="icon-underline"></i>\
+                    </a>\
+                    <a class="post_button make_bold" title="Bold">\
+                        <i class="icon-bold"></i>\
+                    </a>\
+                    <a class="post_button add_file" title="Share a file">\
+                        <i class="icon-paper-clip"></i>\
+                    </a>\
+                    <a class="post_button add_link" title="Share a link">\
+                        <i class="icon-link"></i>\
+                    </a>\
+                    <a class="post_button add_image" title="Share an image">\
+                        <i class="icon-camera"></i>\
+                    </a>\
+                </div>\
+            </div>');
+
+            var $post_editor_after = $post_editor.children('.post_editor_after');
+            $post_editor_after.hide();
+
+            $post_editor_before.children('.post_editor_input').click(function(){
+                $post_editor_before.hide();
+                $post_editor_after.show();
+                $post_editor_after.children('.post_editor_input').focus();
+            });
+        }
+    });
+</script>
+{% endblock %}

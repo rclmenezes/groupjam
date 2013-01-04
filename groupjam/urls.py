@@ -7,7 +7,10 @@ from settings import DEBUG, STATIC_ROOT
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'groupjam.views.home', name='home'),
+    url(r'^/?$', 'groupjam.views.home', name='home'),
+    url(r'^home/?$', 'groupjam.views.home', name='home'),
+    url(r'^thread/?$', 'groupjam.views.thread', name='thread'),
+    url(r'^group/?$', 'groupjam.views.group', name='group'),
     # url(r'^groupjam/', include('groupjam.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

@@ -1,0 +1,284 @@
+<div id="jameditor_html" style="display: none;">
+    <div class="modal hide fade image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="image_modal_title">Add an image</h3>
+        </div>
+        <div class="modal-body">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+
+    <div class="modal hide fade link_modal" tabindex="-1" role="dialog" aria-labelledby="link_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="link_modal_title">Add a link</h3>
+        </div>
+        <div class="modal-body">
+            <p>Link to a URL or email: </p><input id="link_url"></input>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+
+    <div class="modal hide fade file_modal" tabindex="-1" role="dialog" aria-labelledby="file_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="file_modal_title">Add a file</h3>
+        </div>
+        <div class="modal-body">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="input-append">
+                    <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    
+    <div class="box post_editor">
+        <div class="box_picture">
+            <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+        </div>
+        <div class="box_container post_editor_before">
+            <div class="post_editor_input">
+                Start a thread.../Add your thoughts...
+            </div>
+            <div class="post_editor_buttons">
+                <a class="post_button add_file" title="Share a file"><i class="icon-paper-clip"></i></a>
+                <a class="post_button add_link" title="Share a link"><i class="icon-link"></i></a>
+                <a class="post_button add_image" title="Share a picture"><i class="icon-camera"></i></a>
+            </div>
+        </div>
+        <div class="box_container post_editor_after" style="display:none;">
+            <input class="thread_subject" placeholder="Subject" />
+            <div class="post_editor_input" contenteditable="true"></div>
+            <button class="btn">Submit</button>
+            <div class="post_editor_buttons">
+                <a class="post_button make_italic" title="Italic"><i class="icon-italic"></i></a>
+                <a class="post_button make_underline" title="Underline"><i class="icon-underline"></i></a>
+                <a class="post_button make_bold" title="Bold"><i class="icon-bold"></i></a>
+                <a class="post_button add_file" title="Share a file"><i class="icon-paper-clip"></i></a>
+                <a class="post_button add_link" title="Share a link"><i class="icon-link"></i></a>
+                <a class="post_button add_image" title="Share an image"><i class="icon-camera"></i></a>
+            </div>
+        </div>
+        <div class="box_bottom">
+            <span class="post_in_response">
+            </span>
+        </div>
+    </div>
+</div>
+
+<script>
+// How to use:
+// $(document).ready(function(){
+//  makeEditor('#myDiv', false);
+// });
+
+function JamEditor(selector, is_thread_editor)
+{
+    var that = this;
+    
+    // Variables
+    this.$post_editor = $(selector);
+    this.$orig_editor = $('#orig_editor');  
+    this.$post_editor_before = this.$post_editor.children('.post_editor_before');
+    this.$post_editor_after = this.$post_editor.children('.post_editor_after');
+    this.$post_editor_input = this.$post_editor_after.find('.post_editor_input');
+    this.savedSel = null;
+    
+    // Functions
+    this.add_in_response = function(message) {
+        this.$post_editor.find('.post_response').html(message);
+    }
+    
+    this.show_full = function() {
+        this.$post_editor_before.hide();
+        this.$post_editor_after.show();
+    }
+    
+    this.hide_full = function() {
+        this.$post_editor_before.show();
+        this.$post_editor_after.hide();
+    }
+    
+    // Initialization
+    $post_editor.addClass("box post_editor");
+    $post_editor.hide();
+    
+    $obj.html($orig_editor.html());
+    
+    if (!is_thread_editor)
+    {
+        this.$post_editor.find('.thread_subject').hide();
+    }
+    
+    // Activates editor upon click
+    this.$post_editor_before.children('.post_editor_input').click(function(){
+        this.$post_editor_before.hide();
+        this.$post_editor_after.show();
+        this.$post_editor_input.focus();
+    });
+
+    // Prevents losing focus in text areas on button click
+    this.$editor_buttons = this.$post_editor.find('.post_editor_buttons');
+    this.$editor_buttons.children().mousedown(function(event){
+        if (that.$post_editor_input.is(':focus'))
+        {
+            event.preventDefault();
+            return false;
+        }
+    });
+
+    // Buttons
+    $('.add_image').mouseup(function() {
+        if (that.$post_editor_input.is(':focus'))
+        {
+            that.savedSel = saveSelection();
+        }
+        else
+        {
+            that.show_full();
+        }
+        $('#image_modal').modal();
+    });
+
+    $('.add_link').mouseup(function() {   
+        if (that.$post_editor_input.is(':focus'))
+        {
+            that.savedSel = saveSelection();
+        }
+        else
+        {
+            that.show_full();
+        }
+        $('#link_modal').modal();
+    });
+
+    $('.add_file').mouseup(function() {   
+        if (that.$post_editor_input.is(':focus'))
+        {
+            that.savedSel = saveSelection();
+        }
+        else
+        {
+            that.show_full();
+        }
+        $('#file_modal').modal();
+    });
+
+    this.$editor_buttons.children('.make_bold').mouseup(function() { 
+        if (that.$post_editor_input.is(':focus'))
+        {
+            $(this).toggleClass('post_button_active');
+            document.execCommand('StyleWithCSS', false, false);
+            document.execCommand("bold", false, 800);
+        }
+    });
+
+    $editor_buttons.children('.make_italic').mouseup(function() {   
+        if (that.$post_editor_input.is(':focus'))
+        {
+            $(this).toggleClass('post_button_active');
+            document.execCommand('StyleWithCSS', false, false);
+            document.execCommand("italic", false, null);
+        }
+    });
+
+    $editor_buttons.children('.make_underline').mouseup(function() {  
+        if (that.$post_editor_input.is(':focus'))
+        {
+            $(this).toggleClass('post_button_active');
+            document.execCommand('StyleWithCSS', false, false);
+            document.execCommand("underline", false, null);
+        }
+    });
+
+    // Link modal
+    $('#link_modal .save_changes').click(function(){
+        var link = $('#link_modal #link_url').val();
+        var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+        if (email_regex.test(link))
+        {    
+            link = "mailto:" + link;
+        }
+        else if (link.substr(0,7) != "mailto:" && link.substr(0,7) != "http://" && link.length != 0)
+        {
+            link = "http://" + link;
+        }
+
+        if (that.savedSel != null)
+            restoreSelection(that.savedSel);
+        else
+            that.$post_editor_input.focus();
+
+        document.execCommand('StyleWithCSS', false, false);
+        document.execCommand("CreateLink", false, link);
+        $('#link_modal').modal('hide');
+    });
+}
+
+// http://stackoverflow.com/a/2925633
+function insertTextAtCursor(text) {
+    var sel, range, html;
+    if (window.getSelection) {
+        sel = window.getSelection();
+
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            range.insertNode( document.createTextNode(text) );
+        }
+    } else if (document.selection && document.selection.createRange) {
+        document.selection.createRange().text = text;
+    }
+}
+
+// http://stackoverflow.com/a/2925633/764463
+function saveSelection() {
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            var ranges = [];
+            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                ranges.push(sel.getRangeAt(i));
+            }
+            return ranges;
+        }
+    } else if (document.selection && document.selection.createRange) {
+        return document.selection.createRange();
+    }
+    return null;
+}
+
+function restoreSelection(savedSel) {
+    if (savedSel) {
+        if (window.getSelection) {
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            for (var i = 0, len = savedSel.length; i < len; ++i) {
+                sel.addRange(savedSel[i]);
+            }
+        } else if (document.selection && savedSel.select) {
+            savedSel.select();
+        }
+    }
+}
+</script>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block container %}
+<div class="container">
+    <div class="groups_content">
+        <div class="groups_top">
+            <div id="group_name" class="pull-left">
+                <h1>Menezes Family</h1>
+            </div>
+            
+            <div id="group_buttons" class="pull-right">
+                <div id="membership_status">
+                    <button class="btn"><i class="icon-check"></i> In group</button>
+                </div>
+
+                <div class="feed_type btn-group">
+                    <button class="btn btn-primary">Feed</button>
+                    <button class="btn btn">Threads</button>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div id="create_thread" class="box post_editor">
+                <div class="box_picture">
+                    <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+                </div>
+                <div class="box_container post_editor_before">
+                    <div id="create_thread_editor" class="post_editor_input" contenteditable="True">
+                        Create a new thread...
+                    </div>
+                    <div id="create_thread_buttons" class="post_editor_buttons">
+                        <a class="post_button" title="Share a file"><i class="icon-paper-clip"></i></a>
+                        <a class="post_button" title="Share a link"><i class="icon-link"></i></a>
+                        <a class="post_button" title="Share a picture"><i class="icon-camera"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr style="width: 570px; margin: 10px 0;"/>
+
+        {% include "feed.html" %}
+
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+</script>
+{% endblock %}

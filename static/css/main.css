@@ -90,16 +90,67 @@ textarea {
 }
 
 /* ==========================================================================
-   Author's custom styles
+   Overall styles
    ========================================================================== */
 
 body {
     background: #eee;
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 14px;
 }
-.sidebar-nav {
-    padding: 9px 0;
+
+.box
+{
+    background: white;
+    width: 550px;
+    padding: 10px 10px 10px 15px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+    -moz-box-shadow:    0px 1px 3px 2px #ccc;
+    -webkit-box-shadow: 0px 1px 3px 2px #ccc;
+    box-shadow:         0px 1px 3px 2px #ccc;
+}
+
+    .box .box_picture
+    {
+        display: inline-block;
+        vertical-align: top;
+        padding: 4px 12px 4px 0px;
+    }
+
+    .box .box_container
+    {
+        width: 467px;
+        display: inline-block;
+    }
+
+    .box_bottom
+    {
+        color: #888;
+        margin-top: 5px;
+        margin-bottom: -5px;
+        padding-right: 5px;
+    }
+
+        .box_bottom span
+        {
+            color: #888;
+            font-size: 13px;
+            display: inline-block;
+            padding: 3px 0;
+        }
+
+
+a.user_link, a.group_link
+{
+    cursor: pointer;
+}
+
+a.thread_link
+{
+    color: inherit;
+    cursor: pointer;
 }
 
 .navbar, .navbar-inner
@@ -109,22 +160,19 @@ body {
 
     .navbar .navbar-inner .container 
     {
-        width: 940px;
+        width: 700px;
+        padding: 0 50px 0 50px;
     }
 
-    .navbar .navbar-inverse .nav-collapse .nav > li > a
+    .navbar .nav-collapse a
     {
-        color: white;
-    }
-
-    .navbar .navbar-inverse .nav-collapse .nav > li > a:hover
-    {
-        background-color: #B40404;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .navbar a.brand
     {
-        padding: 5px 14px 5px 0px !important;
+        padding: 5px 4px 5px 0px !important;
         margin: 0;
     }
 
@@ -133,27 +181,109 @@ body {
         display: inline-block;
     }
 
-    .navbar #notifications, #notifications:hover
+    .navbar #notifications
     {
-        text-decoration: none;
-        color: white;
-        margin-top: 9px;
-        display: inline-block;
+        padding: 0px 10px;
     }
+
+    .navbar #notifications:hover
+    {
+        background-color: #A80606;
+    }
+
+        .navbar #notifications > a
+        {
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+        }
+
+        .navbar #notifications:hover ul.dropdown-menu
+        {
+            margin-top: -1px;
+            display: block;
+        }
+
+        .navbar #notifications ul.dropdown-menu
+        {
+            font-size: 12px;
+        }
+
+        .navbar #notifications ul.dropdown-menu > li
+        {
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .navbar #notifications ul.dropdown-menu li#notifications_bottom
+        {
+            border-bottom: none;
+        }
+
+        .navbar #notifications ul.dropdown-menu li#notifications_title
+        {
+            padding-left: 20px;
+        }
 
         .navbar #notifications b.caret
         {
-            margin-top: 9px;
+            margin-top: 18px;
             border-top-color: white !important;
             border-bottom-color: white !important;
         }
 
+        .navbar #notifications .notification
+        {
+            min-height: 50px;
+        }
+
+            .notification .notification_picture
+            {
+                margin-right: 5px;
+                display: inline-block;
+                vertical-align: top;
+                padding-bottom: 1px;
+            }
+
+            .notification .notification_content
+            {
+                display: inline-block;
+                width: 320px;
+                white-space: normal;
+            }
+
+            .notification .notification_content .notification_relative_time
+            {
+                color: #888;
+            }
+
+            a:hover .notification .notification_content .notification_relative_time
+            {
+                color: #ccc;
+            }
+
     .navbar #navbar_avatar
     {
-        margin-top: -1px;
+        padding: 0px 10px;
+        cursor: pointer;
     }
 
-        .navbar #navbar_avatar b.caret
+    .navbar #navbar_avatar:hover
+    {
+        background-color: #A80606;
+    }
+
+        .navbar #navbar_avatar:hover ul.dropdown-menu
+        {
+            margin-top: -1px;
+            display: block;
+        }
+
+        .navbar #navbar_avatar a img
+        {
+            padding-bottom: 2px;
+        }
+
+        .navbar #navbar_avatar a b.caret
         {
             margin-top: 18px;
             border-top-color: white !important;
@@ -162,21 +292,282 @@ body {
 
     .navbar #navbar_groups
     {
-        margin-right: 15px;
+        margin-right: 11px;
+        padding: 0px 10px;
     }
 
-        .navbar #navbar_groups b.caret
+    .navbar #navbar_groups:hover
+    {
+        background-color: #A80606;
+    }
+
+        .navbar #navbar_groups:hover ul.dropdown-menu
+        {
+            margin-top: -1px;
+            display: block;
+        }
+
+        .navbar #navbar_groups a p
+        {
+            margin-bottom: 0px;
+        }
+
+        .navbar #navbar_groups a b.caret
         {
             margin-top: 18px;
             border-top-color: white !important;
             border-bottom-color: white !important;
         }
 
+.container
+{
+    width: 800px;
+    position: relative;
+}
 
+/* ==========================================================================
+   Thread styles
+   ========================================================================== */
 
+.thread-top
+{
+    padding-left: 50px;
+}
 
+    .thread-top .thread_info
+    {
+        display: inline-block;
+        float: left;
+        margin-left: 10px;
+        vertical-align: top;
+    }
 
+        .thread-top .thread_info a.group_name
+        {
+            color: inherit;
+            cursor: pointer;
+            margin-top: -5px;
+        }
 
+        .thread-top .thread_title
+        {
+            width: 470px;
+            margin-top: 0;
+        }
+
+.top_buttons
+{
+    position: absolute;
+    top: 20px;
+    right: 50px;
+}
+
+    .top_buttons .watch_button i
+    {
+        margin-right: 5px;
+    }
+
+.thread_content
+{
+    margin-top: 10px;
+    padding-left: 50px;
+}
+
+.post
+{
+
+}
+    .post .thread_title
+    {
+        font-weight: 600;
+    }
+
+    .post .post_description
+    {
+        font-size: 13px;    
+    }
+
+    .post .post_box_top .post_date
+    {
+        float: right;
+        color: #888;
+    }
+
+    a.post_button
+    {
+        color: #888;
+        cursor: pointer;
+        float: right;
+        padding: 3px 8px;
+        margin-top: -5px;
+    }
+
+    a.post_button:hover
+    {
+        text-decoration: none;
+        background-color: #DDE4EF;
+        outline: #aaa solid 1px;
+    }
+
+    a.post_button:active, a.post_button_active
+    {
+        background-color: #ccc;
+        outline: #aaa solid 1px;
+    }
+
+    a.post_button_active:active
+    {
+        background-color: white !important;
+    }
+
+.post_editor
+{
+    margin: 8px 0px 15px;
+}
+
+    .post_editor .post_editor_after
+    {
+        margin-top: 4px;
+    }
+
+        .post_editor .post_editor_after .post_editor_input
+        {
+            margin-bottom: 5px;
+            padding: 4px 4px;
+            border: #ccc solid 1px;
+            min-height: 77px;
+            outline: 0px solid transparent;
+        }
+
+        .post_editor .post_editor_after .post_editor_placeholder
+        {
+            position: absolute;
+            padding: 5px;
+            color: #888;
+        }
+
+        .post_editor .post_editor_after .post_editor_buttons
+        {
+            margin-top: 5px;
+            float: right;
+        }
+
+    .post_editor .post_editor_before
+    {
+        color: #888;
+    }
+
+        .post_editor .post_editor_before .post_editor_input
+        {
+            display: inline-block;
+            width: 335px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 1px solid #D5D5D5;
+            padding: 12px 8px;
+            -moz-box-shadow:    inset 0 0 5px #D5D5D5;
+            -webkit-box-shadow: inset 0 0 5px #D5D5D5;
+            box-shadow:         inset 0 0 5px #D5D5D5;
+        }
+
+        .post_editor .post_editor_before .post_editor_buttons
+        {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 20px;
+        }
+
+/*.post_margin
+{
+    display: inline-block;
+    padding-top: 10px;
+    padding-right: 10px;
+    width: 110px;
+    vertical-align: top;
+}*/
+
+.thread_subject_input
+{
+    padding: 4px 4px;
+    border-top: #ccc solid 1px;
+    border-left: #ccc solid 1px;
+    border-right: #ccc solid 1px;
+    border-bottom: none;
+    width: 457px;
+    outline: 0px solid transparent;
+}
+
+.group_select_container
+{
+    display: block;
+    width: 250px;
+    margin-bottom: 5px;
+}
+
+    .group_select_container > a
+    {
+        padding-top: 1px !important;
+        padding-bottom: 1px !important;
+    }
+
+/* ==========================================================================
+   Feed styles
+   ========================================================================== */
+
+.groups_content
+{
+    padding-left: 50px;
+}
+
+.groups_top
+{
+    width: 570px;
+    margin-top: 5px;
+}
+
+    .groups_top .groups_filter
+    {
+        float: left;
+    }
+
+    .groups_top .feed_type
+    {
+        
+    }
+
+.groups_filter, .feed_type
+{
+    margin-bottom: 5px;
+}
+
+    .groups_filter button, .feed_type button
+    {
+        padding: 5px 20px;
+        border-width: 1px;
+    }
+
+/* ==========================================================================
+   Feed styles
+   ========================================================================== */
+#group_name
+{
+    width: 395px;
+}
+
+    #group_name h1
+    {
+
+    }
+
+#group_buttons
+{
+    text-align: right;
+}
+
+    #group_buttons #membership_status
+    {
+        margin-bottom: 5px;
+    }
 
 /* ==========================================================================
    Helper classes

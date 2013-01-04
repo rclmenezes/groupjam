@@ -1,0 +1,299 @@
+<script type="text/template" id="editor_template">
+    <div class="modal hide fade image_modal" tabindex="-1" role="dialog" aria-labelledby="image_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="image_modal_title">Add an image</h3>
+        </div>
+        <div class="modal-body">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;"><img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" /></div>
+                <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                <div>
+                    <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" /></span>
+                    <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+
+    <div class="modal hide fade link_modal" tabindex="-1" role="dialog" aria-labelledby="link_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="link_modal_title">Add a link</h3>
+        </div>
+        <div class="modal-body">
+            <p>Link to a URL or email: </p><input id="link_url"></input>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+
+    <div class="modal hide fade file_modal" tabindex="-1" role="dialog" aria-labelledby="file_modal_label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="file_modal_title">Add a file</h3>
+        </div>
+        <div class="modal-body">
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <div class="input-append">
+                    <div class="uneditable-input span3"><i class="icon-file fileupload-exists"></i> <span class="fileupload-preview"></span></div><span class="btn btn-file"><span class="fileupload-new">Select file</span><span class="fileupload-exists">Change</span><input type="file" /></span><a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remove</a>
+              </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button class="save_changes btn btn-primary">Save changes</button>
+        </div>
+    </div>
+    
+    <div class="box post_editor">
+        <div class="box_picture">
+            <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+        </div>
+        <div class="box_container post_editor_before">
+            <div class="post_editor_input">
+                <%= placeholder_text %>
+            </div>
+            <div class="post_editor_buttons">
+                <a class="post_button add_file" title="Share a file"><i class="icon-paper-clip"></i></a>
+                <a class="post_button add_link" title="Share a link"><i class="icon-link"></i></a>
+                <a class="post_button add_image" title="Share a picture"><i class="icon-camera"></i></a>
+            </div>
+        </div>
+        <div class="box_container post_editor_after" style="display:none;">
+            <select class="group_select" data-placeholder="Select a group...">
+                <option></option>
+                <option value="Menezes Family">Menezes</option>
+                <option value="Charter Club">Charter Club</option>
+            </select>
+            <input class="thread_subject_input" contenteditable="true" placeholder="Subject" />
+            <div class="post_editor_placeholder">Post</div>
+            <div class="post_editor_input" contenteditable="true"></div>
+            <button class="btn">Submit</button>
+            <div class="post_editor_buttons">
+                <a class="post_button make_italic" title="Italic"><i class="icon-italic"></i></a>
+                <a class="post_button make_underline" title="Underline"><i class="icon-underline"></i></a>
+                <a class="post_button make_bold" title="Bold"><i class="icon-bold"></i></a>
+                <a class="post_button add_file" title="Share a file"><i class="icon-paper-clip"></i></a>
+                <a class="post_button add_link" title="Share a link"><i class="icon-link"></i></a>
+                <a class="post_button add_image" title="Share an image"><i class="icon-camera"></i></a>
+            </div>
+        </div>
+        <div class="box_bottom" style="display: none;">
+            <span class="post_in_response">
+            </span>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+    EditorBaseView = Backbone.View.extend({
+        initialize: function(options){
+            this.render(options.placeholder_text);
+            this.savedSel = null;
+        },
+        render: function(placeholder_text){
+            var variables = { placeholder_text: placeholder_text };
+            var template = _.template( $("#editor_template").html(), variables );
+            this.$el.html( template );
+        },
+        events: {
+            "click .post_editor_before .post_editor_input": "editor_activate",
+            "mousedown .post_button": "post_button_down",
+            "mouseup .add_image": "add_image",
+            "mouseup .add_file": "add_file",
+            "mouseup .add_link": "add_link",
+            "mouseup .make_bold": "make_bold",
+            "mouseup .make_italic": "make_italic",
+            "mouseup .make_underline": "make_underline",
+            'click .link_modal .save_changes': "save_link"
+        },
+        editor_activate: function(event){
+            this.$el.find('.post_editor_before').hide();
+            this.$el.find('.post_editor_after').show();
+        },
+        post_button_down: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                event.preventDefault();
+                return false;
+            }
+        },
+        add_image: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.savedSel = saveSelection();
+            }
+            else
+            {
+                this.editor_activate(event);
+            }
+            this.$el.find('.image_modal').modal();
+        },
+        add_link: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.savedSel = saveSelection();
+            }
+            else
+            {
+                this.editor_activate(event);
+            }
+            this.$el.find('.link_modal').modal();
+        },
+        add_file: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.savedSel = saveSelection();
+            }
+            else
+            {
+                this.editor_activate(event);
+            }
+            this.$el.find('.file_modal').modal();
+        },
+        make_bold: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.$el.find('.make_bold').toggleClass('post_button_active');
+                document.execCommand('StyleWithCSS', false, false);
+                document.execCommand("bold", false, 800);
+            }
+        },
+        make_italic: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.$el.find('.make_italic').toggleClass('post_button_active');
+                document.execCommand('StyleWithCSS', false, false);
+                document.execCommand("italic", false, null);
+            }
+        },
+        make_underline: function(event){
+            if (this.$el.find('.post_editor_after .post_editor_input').is(':focus'))
+            {
+                this.$el.find('.make_underline').toggleClass('post_button_active');
+                document.execCommand('StyleWithCSS', false, false);
+                document.execCommand("underline", false, null);
+            }
+        },
+        save_link: function(event){
+            var link = this.$el.find('.link_modal #link_url').val();
+            var email_regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            if (email_regex.test(link))
+            {    
+                link = "mailto:" + link;
+            }
+            else if (link.substr(0,7) != "mailto:" && link.substr(0,7) != "http://" && link.length != 0)
+            {
+                link = "http://" + link;
+            }
+
+            if (this.savedSel != null)
+                restoreSelection(this.savedSel);
+            else
+                this.$el.find('.post_editor_after .post_editor_input').focus();
+
+            document.execCommand('StyleWithCSS', false, false);
+            document.execCommand("CreateLink", false, link);
+            this.$el.find('.link_modal').modal('hide');
+        }
+    });
+
+    ThreadView = EditorBaseView.extend({
+        initialize: function(options){
+            options['placeholder_text'] = "Start a thread...";
+            this.constructor.__super__.initialize.apply(this, [options]);
+            this.$el.find(".group_select").select2({
+                containerCssClass: "group_select_container",
+                placeholder: "Select a group..."
+            });
+        },
+        editor_activate: function(event){
+            this.constructor.__super__.editor_activate.apply(this, [event]);
+            this.$el.find('.thread_subject_input').focus();
+        },
+        events: function(){
+            return _.extend({}, EditorBaseView.prototype.events,{
+                'input .post_editor_after .post_editor_input': 'hide_post_editor_placeholder'
+            });
+        },
+        hide_post_editor_placeholder: function(){
+            var content = this.$el.find('.post_editor_after .post_editor_input').html()
+            if (content.length == 0 || content == "<br>")
+            {
+                this.$el.find('.post_editor_placeholder').show();
+            }
+            else
+            {
+                this.$el.find('.post_editor_placeholder').hide();
+            }
+        }
+    });
+
+    PostView = EditorBaseView.extend({
+        initialize: function(options){
+            options['placeholder_text'] = "Add your thoughts...";
+            this.constructor.__super__.initialize.apply(this, [options]);
+            this.$el.find(".thread_subject_input").hide();
+            this.$el.find(".group_select").hide();
+            this.$el.find(".post_editor_placeholder").hide();
+        },
+        editor_activate: function(event){
+            this.constructor.__super__.editor_activate.apply(this, [event]);
+            this.$el.find('.post_editor_after .post_editor_input').focus();
+        }
+    });
+
+    // http://stackoverflow.com/a/2925633
+    function insertTextAtCursor(text) {
+        var sel, range, html;
+        if (window.getSelection) {
+            sel = window.getSelection();
+
+            if (sel.getRangeAt && sel.rangeCount) {
+                range = sel.getRangeAt(0);
+                range.deleteContents();
+                range.insertNode( document.createTextNode(text) );
+            }
+        } else if (document.selection && document.selection.createRange) {
+            document.selection.createRange().text = text;
+        }
+    }
+
+    // http://stackoverflow.com/a/2925633/764463
+    function saveSelection() {
+        if (window.getSelection) {
+            sel = window.getSelection();
+            if (sel.getRangeAt && sel.rangeCount) {
+                var ranges = [];
+                for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                    ranges.push(sel.getRangeAt(i));
+                }
+                return ranges;
+            }
+        } else if (document.selection && document.selection.createRange) {
+            return document.selection.createRange();
+        }
+        return null;
+    }
+
+    function restoreSelection(savedSel) {
+        if (savedSel) {
+            if (window.getSelection) {
+                sel = window.getSelection();
+                sel.removeAllRanges();
+                for (var i = 0, len = savedSel.length; i < len; ++i) {
+                    sel.addRange(savedSel[i]);
+                }
+            } else if (document.selection && savedSel.select) {
+                savedSel.select();
+            }
+        }
+    }
+</script>
