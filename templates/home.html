@@ -33,9 +33,11 @@
 {% endblock %}
 
 {% block script %}
-{% include "editor_view.html" %}
 
 <script>
-    var thread_view = new ThreadView({ el: $("#create_thread") });
+    var user = new User({id: 1, first_name: "Rodrigo", last_name: "Menezes", profile_picture: "{{ STATIC_URL }}img/profile_pic.jpg"});
+    
+    var new_thread = new Thread();
+    var thread_editor_view = new ThreadEditorView({ model: new_thread, el: $("#create_thread"), user: user });
 </script>
 {% endblock %}

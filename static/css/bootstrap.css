@@ -206,7 +206,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: Open Sans;
+  font-family: Open Sans, Helvetica;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -874,7 +874,7 @@ input,
 button,
 select,
 textarea {
-  font-family: Open Sans;
+  font-family: Open Sans,Helvetica;
 }
 label {
   display: block;

@@ -15,82 +15,36 @@
     <div class="clearfix"></div>
 
     <div class="thread_content">
-        <div class="post box">
-            <div class="box_picture">
-                <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
-            </div>
-            <div class="box_container">
-                <div class="post_box_top">
-					<span class="author_name">
-                    	<a class="user_link">Rodrigo Menezes</a>
-					</span>
-					<span class="post_date">
-		                10/31/12 5:00 PM
-		            </span>
-                </div>
-                <div class="post_content">
-                    <p>Look at the pretty kitty!</p>
-                    <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
-                </div>
-            </div>
-            <div class="box_bottom">
-                <span class="post_in_response">
-                
-                </span>
-                <a class="post_button" title="Share this post">
-                    0 <i class="icon-share"></i>
-                </a>
-                <a class="post_button" title="Kudos">
-                    0 <i class="icon-thumbs-up"></i>
-                </a>
-                <a class="post_button" title="Post a reply">
-                    1 <i class="icon-comment"></i>
-                </a>
-            </div>
+        <div id="post_1">
+            <p>Look at the pretty kitty!</p>
+            <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
         </div>
 
-        <div class="post box">
-            <div class="box_picture">
-                <img width="60px" height="60px" src="{{ STATIC_URL }}img/picture_8.jpeg" />
-            </div>
-            <div class="box_container">
-                <div class="post_box_top">
-                    <span class="author_name">
-                        <a class="user_link">Bernardo Menezes</a>
-                    </span>
-                    <span class="post_date">
-                        10/31/12 5:32 PM
-                    </span>
-                </div>
-                <div class="post_content">
-                    <p>Nice cat!</p>
-                </div>
-            </div>
-            <div class="box_bottom">
-                <span class="post_in_response">
-                    In response to <u>Rodrigo Menezes</u>
-                </span>
-                <a class="post_button" title="Share this post">
-                    0 <i class="icon-share"></i>
-                </a>
-                <a class="post_button" title="Kudos">
-                    0 <i class="icon-thumbs-up"></i>
-                </a>
-                <a class="post_button" title="Post a reply">
-                    0 <i class="icon-comment"></i>
-                </a>
-            </div>
+        <div id="post_2">
+            <p>Nice cat!</p>
         </div>
 
         <div id="create_post"></div>
-
     </div>
 </div>
 {% endblock %}
 
 {% block script %}
-{% include "editor_view.html" %}
 <script>
-    var post_view = new PostView({ el: $("#create_post") });
+    var user = new User({id: 1, first_name: "Rodrigo", last_name: "Menezes", profile_picture: "{{ STATIC_URL }}img/profile_pic.jpg"});
+
+    var new_post = new Post();
+    var post_editor_view = new PostEditorView({ model: new_post, el: $("#create_post"), user: user });
+
+    var post_1 = new Post({ id: 1, content: $('#post_1').html() }, { date: "10/31/12 5:04 PM", num_shares: 0, num_kudos: 0, num_replies: 1, 
+        author: { id: 1, first_name: "Rodrigo", last_name: "Menezes", profile_picture: "{{ STATIC_URL }}img/profile_pic.jpg" } 
+    });
+    var post_2 = new Post({ id: 2, content: $('#post_2').html() }, { date: "10/31/12 5:32 PM", num_shares: 0, num_kudos: 0, num_replies: 0,
+        author: { id: 2, first_name: "Bernardo", last_name: "Menezes", profile_picture: "{{ STATIC_URL }}img/picture_8.jpeg" }
+    });
+    var post_1_view = new PostView({ el: $("#post_1"), model: post_1, post_editor_view: post_editor_view });
+    var post_2_view = new PostView({ el: $("#post_2"), model: post_2, post_editor_view: post_editor_view });
+
+    var posts = new PostList([post_1, post_2], {id: 1});
 </script>
 {% endblock %}

@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"post_editor",
+				"post_editor_input"
+			],
+			[
+				"post",
+				"post_editor_input"
+			],
+			[
+				"post_",
+				"post_editor_after"
+			],
+			[
+				"nav",
+				"navbar-inverse"
+			],
+			[
+				"crea",
+				"create_post_box"
+			],
+			[
+				"create_",
+				"create_post_editor"
+			],
+			[
 				"Enco",
 				"EncoderPRFKeyOffset"
 			],
@@ -55,6 +79,62 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "templates/home.html",
+			"settings":
+			{
+				"buffer_size": 1318,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/thread.html",
+			"settings":
+			{
+				"buffer_size": 1924,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "static/js/app.js",
+			"settings":
+			{
+				"buffer_size": 8619,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/splash.html",
+			"settings":
+			{
+				"buffer_size": 266,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/login_base.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "groupjam/urls.py",
+			"settings":
+			{
+				"buffer_size": 1020,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "groupjam/views.py",
+			"settings":
+			{
+				"buffer_size": 545,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -152,6 +232,33 @@
 	},
 	"file_history":
 	[
+		"/Users/rodrigomenezes/Code/groupjam/static/css/bootstrap.min.css",
+		"/Users/rodrigomenezes/Code/groupjam/static/css/bootstrap.css",
+		"/Users/rodrigomenezes/Code/groupjam/templates/backbone_templates.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/base.html",
+		"/Users/rodrigomenezes/Code/groupjam/static/css/main.css",
+		"/Users/rodrigomenezes/Code/groupjam/templates/thread2.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/group.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/editor_view.html",
+		"/Users/rodrigomenezes/Code/groupjam/static/js/app.js",
+		"/Users/rodrigomenezes/Code/groupjam/templates/thread.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/post_view.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/editor_templates.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/editor_modals.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/feed.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/jam_editor.html",
+		"/Users/rodrigomenezes/Code/groupjam/templates/home2.html",
+		"/Users/rodrigomenezes/Code/groupjam/static/css/underscore-min.js",
+		"/Users/rodrigomenezes/Code/groupjam/templates/group2.html",
+		"/Users/rodrigomenezes/Downloads/bootstrap-wysihtml5-0.0.2/libs/js/wysihtml5-0.3.0_rc2.min.js",
+		"/Users/rodrigomenezes/Code/groupjam/templates/home.html",
+		"/Users/rodrigomenezes/Code/groupjam/groupjam/urls.py",
+		"/Users/rodrigomenezes/Code/groupjam/groupjam/views.py",
+		"/Users/rodrigomenezes/Code/groupjam/groupjam/settings.py",
+		"/Users/rodrigomenezes/Code/groupjam/templates/index.html",
+		"/Users/rodrigomenezes/Code/groupjam/groupjam/s3utils.py",
+		"/Users/rodrigomenezes/Code/groupjam/requirements.txt",
+		"/Users/rodrigomenezes/Code/groupjam/Procfile",
 		"/Users/rodrigomenezes/Code/uberapp/schema.sql",
 		"/Users/rodrigomenezes/Code/badstartups/badstartups/views.py",
 		"/Users/rodrigomenezes/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
@@ -252,34 +359,7 @@
 		"/Users/rodrigomenezes/upright/templates/groupbar.html",
 		"/Users/rodrigomenezes/upright/css/style.css",
 		"/Users/rodrigomenezes/upright/templates/500.html",
-		"/Users/rodrigomenezes/upright/templates/404.html",
-		"/Users/rodrigomenezes/upright/static/croppable/js/cropped_image_admin.js",
-		"/Users/rodrigomenezes/upright/uprightapp/tests.py",
-		"/Users/rodrigomenezes/upright/upright/S3.py",
-		"/Users/rodrigomenezes/upright/templates/registration/confirmation_email.html",
-		"/Users/rodrigomenezes/upright/templates/statuses.html",
-		"/Users/rodrigomenezes/upright/templates/comment.html",
-		"/Users/rodrigomenezes/upright/templates/group_status.html",
-		"/Users/rodrigomenezes/upright/uprightapp/croppable/forms.py",
-		"/Users/rodrigomenezes/upright/uprightapp/croppable/fields.py",
-		"/Users/rodrigomenezes/upright/templates/group_status_bleah.html",
-		"/Users/rodrigomenezes/upright/templates/group_status_box.html",
-		"/Users/rodrigomenezes/upright/templates/multi_status.html",
-		"/Users/rodrigomenezes/upright/templates/multi_status_bleah.html",
-		"/Users/rodrigomenezes/upright/media/cache/media/people/Screen_Shot_2012-07-30_at_5.35.48_AM_picture_cropped.png",
-		"/Users/rodrigomenezes/upright/media/cache/media/people/edkelley_picture_cropped.jpg",
-		"/Users/rodrigomenezes/upright/uprightapp/croppable/__init__.py",
-		"/Users/rodrigomenezes/upright/templates/multi_status_box.html",
-		"/Users/rodrigomenezes/upright/uprightapp/croppable/widgets.py",
-		"/Users/rodrigomenezes/upright/uprightapp/template_tags/__init__.py",
-		"/Users/rodrigomenezes/upright/uprightapp/template_tags/human_date.py",
-		"/Users/rodrigomenezes/upright/static/js/jquery.urlize.js",
-		"/Users/rodrigomenezes/upright/static/css/basic.css",
-		"/Users/rodrigomenezes/upright/upright/.Python",
-		"/Users/rodrigomenezes/upright/uprightapp/views/multi_status_views.py",
-		"/Users/rodrigomenezes/upright/templates/status-comments.html",
-		"/Users/rodrigomenezes/upright/static/js/TextAreaExpander.js",
-		"/Users/rodrigomenezes/upright/templates/comment-text.html"
+		"/Users/rodrigomenezes/upright/templates/404.html"
 	],
 	"find":
 	{
@@ -303,6 +383,27 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"checkbox",
+			"Open S",
+			"font",
+			"input",
+			"thread_",
+			"{\n",
+			"post_input",
+			"console.lo",
+			"current",
+			"button",
+			"post_mar",
+			"author_n",
+			"thread_ti",
+			".create_post",
+			"post_in",
+			"clear",
+			"-8",
+			"group_na",
+			"container",
+			"contain",
+			"djangotogo",
 			"PRFKey",
 			"PRFKe",
 			"PRFKey",
@@ -409,28 +510,7 @@
 			"multistatus",
 			"multi-status",
 			"multi_status",
-			"multi",
-			"multi_",
-			"multi",
-			"croppable.",
-			"team",
-			"value_",
-			"getJcrop",
-			"croppable",
-			"person.i",
-			"de_urli",
-			"sentine",
-			"urlize",
-			"urlize\\",
-			"urlize",
-			"comment_ed",
-			"submit_status",
-			"submit_comment",
-			"submit",
-			".status-box",
-			"status-text",
-			"stdimage",
-			"delete"
+			"multi"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -438,6 +518,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"groupjam",
 			"RANDOM_BYTES",
 			"PADDING_BYTES",
 			"parent",
@@ -452,8 +533,199 @@
 	"groups":
 	[
 		{
+			"selected": 4,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "templates/home.html",
+					"settings":
+					{
+						"buffer_size": 1318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								105,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/thread.html",
+					"settings":
+					{
+						"buffer_size": 1924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								699,
+								699
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "static/js/app.js",
+					"settings":
+					{
+						"buffer_size": 8619,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7595,
+								7595
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3045.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/splash.html",
+					"settings":
+					{
+						"buffer_size": 266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								127,
+								127
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/login_base.html",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "groupjam/urls.py",
+					"settings":
+					{
+						"buffer_size": 1020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "groupjam/views.py",
+					"settings":
+					{
+						"buffer_size": 545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								47,
+								47
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

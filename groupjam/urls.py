@@ -7,6 +7,7 @@ from settings import DEBUG, STATIC_ROOT
 
 urlpatterns = patterns('',
     # Examples:
+    url(r'^splash/?$', 'groupjam.views.splash', name='splash'),
     url(r'^/?$', 'groupjam.views.home', name='home'),
     url(r'^home/?$', 'groupjam.views.home', name='home'),
     url(r'^thread/?$', 'groupjam.views.thread', name='thread'),

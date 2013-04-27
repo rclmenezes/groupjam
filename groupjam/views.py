@@ -13,3 +13,7 @@ def home(request):
 def group(request):
     c = RequestContext(request, {})
     return render_to_response('group.html', c)
+
+def splash(request):
+    c = RequestContext(request, {})
+    return render_to_response('splash.html', c)

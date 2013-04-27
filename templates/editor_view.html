@@ -205,7 +205,7 @@
         }
     });
 
-    ThreadView = EditorBaseView.extend({
+    ThreadEditorView = EditorBaseView.extend({
         initialize: function(options){
             options['placeholder_text'] = "Start a thread...";
             this.constructor.__super__.initialize.apply(this, [options]);
@@ -236,7 +236,7 @@
         }
     });
 
-    PostView = EditorBaseView.extend({
+    PostEditorView = EditorBaseView.extend({
         initialize: function(options){
             options['placeholder_text'] = "Add your thoughts...";
             this.constructor.__super__.initialize.apply(this, [options]);
