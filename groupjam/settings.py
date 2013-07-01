@@ -167,7 +167,11 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'gunicorn',
     'debug_toolbar',
-    'compressor'
+    'compressor',
+    'groupapp',
+    'imagekit',
+    'accounts',
+    'south'
 )
 
 # A sample logging configuration. The only tangible logging

@@ -522,6 +522,19 @@ a.thread_link
         padding-bottom: 1px !important;
     }
 
+label.send_email
+{
+    display: inline-block;
+    margin-top: 4px;
+    float: right;
+}
+
+    label.send_email input
+    {
+        margin-left: 4px;
+        margin-top: 0px;
+    }
+
 /* ==========================================================================
    Feed styles
    ========================================================================== */

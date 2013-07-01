@@ -6,6 +6,9 @@ from settings import DEBUG, STATIC_ROOT
 # admin.autodiscover()
 
 urlpatterns = patterns('',
+
+    url(r'^accounts/', include('accounts.urls')),
+    
     # Examples:
     url(r'^splash/?$', 'groupjam.views.splash', name='splash'),
     url(r'^/?$', 'groupjam.views.home', name='home'),
