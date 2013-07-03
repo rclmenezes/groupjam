@@ -8,7 +8,7 @@ def thread(request):
 
 def home(request):
     c = RequestContext(request, {})
-    return render_to_response('home3.html', c)
+    return render_to_response('home.html', c)
 
 def group(request):
     c = RequestContext(request, {})

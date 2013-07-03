@@ -93,9 +93,10 @@ textarea {
    Overall styles
    ========================================================================== */
 
+
 body {
     background: #eee;
-    padding-top: 50px;
+    padding-top: 41px;
     padding-bottom: 20px;
     font-size: 14px;
 }
@@ -145,18 +146,6 @@ body {
             cursor: pointer;
         }
 
-
-a.user_link, a.group_link
-{
-    cursor: pointer;
-}
-
-a.thread_link
-{
-    color: inherit;
-    cursor: pointer;
-}
-
 .navbar, .navbar-inner
 {
     height: 40px;
@@ -164,8 +153,8 @@ a.thread_link
 
     .navbar .navbar-inner .container 
     {
-        width: 700px;
-        padding: 0 50px 0 50px;
+        width: 800px;
+        padding: 0px;
     }
 
     .navbar .nav-collapse a
@@ -326,273 +315,39 @@ a.thread_link
 .container
 {
     width: 800px;
+    padding: 0 0px 0 0px;
     position: relative;
 }
 
-/* ==========================================================================
-   Thread styles
-   ========================================================================== */
-
-.thread-top
+#main_container
 {
-    padding-left: 50px;
+    min-height: 600px;
 }
 
-    .thread-top .thread_info
-    {
-        display: inline-block;
-        float: left;
-        margin-left: 10px;
-        vertical-align: top;
-    }
-
-        .thread-top .thread_info a.group_name
-        {
-            color: inherit;
-            cursor: pointer;
-            margin-top: -5px;
-        }
-
-        .thread-top .thread_title
-        {
-            width: 470px;
-            margin-top: 0;
-        }
-
-.top_buttons
+#container_mid
 {
-    position: absolute;
-    top: 20px;
-    right: 50px;
+    background: #ddd;
+    height: 150px;
 }
 
-    .top_buttons .watch_button i
-    {
-        margin-right: 5px;
-    }
-
-.thread_content
+.big_caret
 {
-    margin-top: 10px;
-    padding-left: 50px;
-}
-
-.post
-{
-
-}
-    .post .thread_title
-    {
-        font-weight: 600;
-    }
-
-    .post .post_description
-    {
-        font-size: 13px;    
-    }
-
-    .post .post_box_top .post_date
-    {
-        float: right;
-        color: #888;
-    }
-
-    a.post_button
-    {
-        color: #888;
-        cursor: pointer;
-        float: right;
-        padding: 3px 8px;
-        margin-top: -5px;
-    }
-
-    a.post_button:hover
-    {
-        text-decoration: none;
-        background-color: #DDE4EF;
-        outline: #aaa solid 1px;
-    }
-
-    a.post_button:active, a.post_button_active
-    {
-        background-color: #ccc;
-        outline: #aaa solid 1px;
-    }
-
-    a.post_button_active:active
-    {
-        background-color: white !important;
-    }
-
-.post_editor
-{
-    margin: 8px 0px 15px;
-}
-
-    .post_editor .post_editor_after
-    {
-        margin-top: 4px;
-    }
-
-        .post_editor .post_editor_after .post_editor_input
-        {
-            margin-top: 1px;
-            margin-bottom: 5px;
-            padding: 4px 4px 4px 4px;
-            border: #ccc solid 1px;
-            min-height: 77px;
-            outline: 0px solid transparent;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-            .post_editor .post_editor_after .post_editor_input div
-            {
-                font-weight: normal;
-                font-size: 14px;
-            }
-
-        .post_editor .post_editor_after .post_editor_placeholder
-        {
-            position: absolute;
-            padding: 5px;
-            color: #888;
-        }
-
-        .post_editor .post_editor_after .post_editor_buttons
-        {
-            margin-top: 5px;
-            float: right;
-        }
-
-    .post_editor .post_editor_before
-    {
-        color: #888;
-    }
-
-        .post_editor .post_editor_before .post_editor_input
-        {
-            display: inline-block;
-            width: 335px;
-            font-size: 16px;
-            margin-top: 10px;
-            border: 1px solid #D5D5D5;
-            padding: 12px 8px;
-            -moz-box-shadow:    inset 0 0 5px #D5D5D5;
-            -webkit-box-shadow: inset 0 0 5px #D5D5D5;
-            box-shadow:         inset 0 0 5px #D5D5D5;
-        }
-
-        .post_editor .post_editor_before .post_editor_buttons
-        {
-            display: inline-block;
-            vertical-align: middle;
-            font-size: 20px;
-        }
-
-/*.post_margin
-{
+    vertical-align: middle;
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-top-color: #333;
+    border-right-color: transparent;
+    border-left-color: transparent; 
+    margin-left: 3px;
+    content: '';
+    height: 0;
     display: inline-block;
-    padding-top: 10px;
-    padding-right: 10px;
-    width: 110px;
-    vertical-align: top;
-}*/
-
-.thread_subject_input
-{
-    padding: 4px 4px;
-    border-top: #ccc solid 1px;
-    border-left: #ccc solid 1px;
-    border-right: #ccc solid 1px;
-    border-bottom: #ccc solid 0px;
-    width: 457px;
-    outline: 0px solid transparent;
+    line-height: 40px;
+    border-top-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
 }
-
-.group_select_container
-{
-    width: 250px;
-    margin-bottom: 5px;
-}
-
-    .group_select_container > a
-    {
-        padding-top: 1px !important;
-        padding-bottom: 1px !important;
-    }
-
-label.send_email
-{
-    display: inline-block;
-    margin-top: 4px;
-    float: right;
-}
-
-    label.send_email input
-    {
-        margin-left: 4px;
-        margin-top: 0px;
-    }
-
-/* ==========================================================================
-   Feed styles
-   ========================================================================== */
-
-.groups_content
-{
-    padding-left: 50px;
-}
-
-.groups_top
-{
-    width: 570px;
-    margin-top: 5px;
-}
-
-    .groups_top .groups_filter
-    {
-        float: left;
-    }
-
-    .groups_top .feed_type
-    {
-        
-    }
-
-.groups_filter, .feed_type
-{
-    margin-bottom: 5px;
-}
-
-    .groups_filter button, .feed_type button
-    {
-        padding: 5px 20px;
-        border-width: 1px;
-    }
-
-/* ==========================================================================
-   Feed styles
-   ========================================================================== */
-#group_name
-{
-    width: 395px;
-}
-
-    #group_name h1
-    {
-
-    }
-
-#group_buttons
-{
-    text-align: right;
-}
-
-    #group_buttons #membership_status
-    {
-        margin-bottom: 5px;
-    }
 
 /* ==========================================================================
    Helper classes

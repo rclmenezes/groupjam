@@ -1,43 +1,11 @@
 {% extends "base.html" %}
 
 {% block container %}
-<div class="container">
-    <div class="groups_content">
-        <div class="groups_top">
-            <div class="groups_filter btn-group">
-                <a class="btn btn-primary">All</a>
-                    <a class="btn" data-toggle="dropdown" href="#">Other <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Menezes Family</a></li>
-                        <li><a href="#">Charter Club</a></li>
-                    </ul>
-            </div>
-
-            <div class="feed_type btn-group pull-right">
-                <button class="btn btn-primary">Feed</button>
-                <button class="btn btn">Threads</button>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <div id="create_thread"></div>
-
-        </div>
-
-        <hr style="width: 570px; margin: 10px 0;"/>
-
-        {% include "feed.html" %}
-
-    </div>
+<div id="main_container" class="container box">
+    <div id="container_top"></div>
+    <div id="container_mid"></div>
 </div>
 {% endblock %}
 
 {% block script %}
-
-<script>
-    var user = new User({id: 1, first_name: "Rodrigo", last_name: "Menezes", profile_picture: "{{ STATIC_URL }}img/profile_pic.jpg"});
-    
-    var new_thread = new Thread();
-    var thread_editor_view = new ThreadEditorView({ model: new_thread, el: $("#create_thread"), user: user });
-</script>
 {% endblock %}
