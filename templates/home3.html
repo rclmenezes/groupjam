@@ -1,0 +1,76 @@
+{% extends "base2.html" %}
+
+{% block container %}
+<div class="container">
+    <div id="top_box" class="box">
+        <h3 id="top_box_head" style="">All Groups<span class="big_caret  "></span></h3>
+        <ul class="horizontal">
+            <li class="selected"><a>Feed</a></li>
+            <li><a>Calendar</a></li>
+            <li><a>Box</a></li>
+            <li><a>Pictures</a></li>
+        </ul> 
+    </div>
+    <div id="feed_box" class="box">
+        <div class="post">
+            <div class="post_picture">
+                <img width="60px" height="60px" src="{{ STATIC_URL }}img/picture_8.jpeg" />
+            </div>
+            <div class="post_container">
+                <div class="post_box_top">
+                    <span class="author_name">
+                        <a class="user_link">Bernardo Menezes</a>
+                    </span>
+                </div>
+                <div class="post_content">
+                    <p>Nice cat!</p>
+                </div>
+                <div class="post_bottom">
+                    <span class="relative_time">
+                    5 minutes ago
+                </span>
+                <a class="post_button" title="Share this post">
+                    0 <i class="icon-share"></i>
+                </a>
+                <a class="post_button" title="Kudos">
+                    0 <i class="icon-thumbs-up"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post_picture">
+                <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+            </div>
+            <div class="post_container">
+                <div class="post_box_top">
+                    <span class="author_name">
+                        <a class="user_link">Rodrigo Menezes</a>
+                    </span>
+                </div>
+
+                <div class="post_content">
+                    <p>Look at the pretty kitty!</p>
+                    <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
+                </div>
+
+                <div class="post_bottom">
+                    <span class="relative_time">
+                        30 minutes ago
+                    </span>
+                    <a class="post_button" title="Share this post">
+                        0 <i class="icon-share"></i>
+                    </a>
+                    <a class="post_button" title="Kudos">
+                        0 <i class="icon-thumbs-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

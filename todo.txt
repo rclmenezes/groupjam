@@ -1,0 +1,100 @@
+urls:
+    / feed
+    /thread/num, see thread # blah
+
+    /api/thread
+    /api/post
+    /api/like
+
+
+User
+    email
+    firstname
+    lastname
+    picture
+    date_created
+
+Group
+    name
+    url
+    date_created
+    privacy
+    invites
+
+Thread
+    title
+    user
+    date_created
+    group
+
+Post
+    thread
+    date_created
+    user
+
+Likes
+    post
+    date_created
+    user
+
+Watch
+    thread
+    date_created
+    user
+
+
+
+from models import Thread, User,
+from django.http import HttpResponse
+
+class JSONResponseMixin(object):
+    response_class = HttpResponse
+
+    def render_to_response(self, context, **response_kwargs):
+        response_kwargs['content_type'] = 'application/json'
+        return self.response_class(
+            self.convert_context_to_json(context),
+            **response_kwargs
+        )
+
+    def convert_context_to_json(self, context):
+        return json.dumps(context)
+
+class ThreadView(View):
+    def get(self, request, *args, **kwargs):
+        entry_id = kwargs.get('entry_id')
+        if entry_id:
+            # show thread
+        else:
+            # show collection of threads
+
+    def post(self, request, *args, **kwargs):
+        # insert new thread
+
+    def put(self, request, *args, **kwargs):
+        entry_id = kwargs.get('entry_id')
+        if entry_id:
+            # replace thread
+        else:
+            # disabled
+
+    def delete(self, request, *args, **kwargs):
+        entry_id = kwargs.get('entry_id')
+        if entry_id:
+            # delete thread
+        else:
+            # disabled
+
+
+
+
+
+Group name:
+Group url:
+Who can invite people?
+- Only admins (you)
+- Any group member
+- Anyone
+Who can see posts?
+- Anyone
+- Only you
