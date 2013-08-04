@@ -1,10 +1,62 @@
-{% extends "base.html" %}
+{% extends "two-box.html" %}
 
-{% block container %}
-<div id="main_container" class="container box">
-    <div id="container_top"></div>
-    <div id="container_mid"></div>
-</div>
+{% block box %}
+    <div class="post">
+            <div class="post_picture">
+                <img width="60px" height="60px" src="{{ STATIC_URL }}img/picture_8.jpeg" />
+            </div>
+            <div class="post_container">
+                <div class="post_box_top">
+                    <span class="author_name">
+                        <a class="user_link">Bernardo Menezes</a>
+                    </span>
+                </div>
+                <div class="post_content">
+                    <p>Nice cat!</p>
+                </div>
+                <div class="post_bottom">
+                    <span class="relative_time">
+                    5 minutes ago
+                </span>
+                <a class="post_button" title="Share this post">
+                    0 <i class="icon-share"></i>
+                </a>
+                <a class="post_button" title="Kudos">
+                    0 <i class="icon-thumbs-up"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="post">
+            <div class="post_picture">
+                <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+            </div>
+            <div class="post_container">
+                <div class="post_box_top">
+                    <span class="author_name">
+                        <a class="user_link">Rodrigo Menezes</a>
+                    </span>
+                </div>
+
+                <div class="post_content">
+                    <p>Look at the pretty kitty!</p>
+                    <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
+                </div>
+
+                <div class="post_bottom">
+                    <span class="relative_time">
+                        30 minutes ago
+                    </span>
+                    <a class="post_button" title="Share this post">
+                        0 <i class="icon-share"></i>
+                    </a>
+                    <a class="post_button" title="Kudos">
+                        0 <i class="icon-thumbs-up"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
 {% endblock %}
 
 {% block script %}

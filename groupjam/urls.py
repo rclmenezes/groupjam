@@ -11,10 +11,13 @@ urlpatterns = patterns('',
     
     # Examples:
     url(r'^splash/?$', 'groupjam.views.splash', name='splash'),
-    url(r'^/?$', 'groupjam.views.home', name='home'),
-    url(r'^home/?$', 'groupjam.views.home', name='home'),
-    url(r'^thread/?$', 'groupjam.views.thread', name='thread'),
-    url(r'^group/?$', 'groupjam.views.group', name='group'),
+    url(r'^/?$', 'groupjam.views.feed', name='feed'),
+    url(r'^feed/?$', 'groupjam.views.feed', name='feed'),
+    url(r'^calendar/?$', 'groupjam.views.calendar', name='calendar'),
+    url(r'^old/?$', 'groupjam.views.old', name='old'),
+    url(r'^box/?$', 'groupjam.views.box', name='box'),
+    url(r'^pictures/?$', 'groupjam.views.pictures', name='pictures'),
+    url(r'^settings/?$', 'groupjam.views.settings', name='settings'),
     # url(r'^groupjam/', include('groupjam.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:

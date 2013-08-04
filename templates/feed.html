@@ -1,64 +1,80 @@
-<div class="post box">
-            <div class="box_picture">
-                <img width="60px" height="60px" src="{{ STATIC_URL }}img/picture_8.jpeg" />
-            </div>
-            <div class="box_container">
-                <div class="post_box_top">
-                    <span class="author_name">
-                        <a class="user_link">Bernardo Menezes</a>
-                    </span>
-                    <span class="post_description">
-                        responded to thread in <a class="group_link">Menezes Family</a>.
-                    </span>
-                    <span class="post_date">
-                    </span>
-                    <div class="thread_title">
-                        <a class="thread_link">
-                            Why cat pictures are awesome
-                        </a>
-                    </div>
+{% extends "two-box.html" %}
+
+{% block box %}
+    <div id="post_entry" class="post">
+        <div class="post_picture">
+            <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+        </div>
+        <div class="post_container">
+            <div class="post_input_before">
+                <div class="post_input_text">
+                    Say something...
                 </div>
-                <div class="post_content">
-                    <p>Nice cat!</p>
+                <div class="post_input_buttons">
+                    <a class="post_button" title="Share a file"><i class="icon-paper-clip"></i></a>
+                    <a class="post_button" title="Share a link"><i class="icon-link"></i></a>
+                    <a class="post_button" title="Share a picture"><i class="icon-camera"></i></a>
                 </div>
             </div>
-            <div class="box_bottom">
-                <span class="relative_time">
-                    5 minutes ago
-                </span>
-                <a class="post_button" title="Share this post">
-                    0 <i class="icon-share"></i>
-                </a>
-                <a class="post_button" title="Kudos">
-                    0 <i class="icon-thumbs-up"></i>
-                </a>
+            <div class="post_input_after hide">
+                <form enctype='multipart/form-data'>
+                    <textarea></textarea>
+                    <div class="post_attachment"></div>
+                    <button class="btn post_cancel" type="button">Cancel</button>
+                    <input class="btn btn-primary" type="submit" />
+
+                    <a class="post_button" title="Share a file"><i class="icon-paper-clip"></i></a>
+                    <a class="post_button" title="Share a link"><i class="icon-link"></i></a>
+                    <a class="post_button" title="Share a picture"><i class="icon-camera"></i></a>
+                </form>
             </div>
         </div>
+    </div>
 
-        <div class="post box">
-            <div class="box_picture">
-                <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+    <div class="post">
+        <div class="post_picture">
+            <img width="60px" height="60px" src="{{ STATIC_URL }}img/picture_8.jpeg" />
+        </div>
+        <div class="post_container">
+            <div class="post_box_top">
+                <span class="author_name">
+                    <a class="user_link">Bernardo Menezes</a>
+                </span>
             </div>
-            <div class="box_container">
-                <div class="post_box_top">
-                    <span class="author_name">
-                        <a class="user_link">Rodrigo Menezes</a>
-                    </span>
-                    <span class="post_description">
-                        created a thread in <a class="group_link">Menezes Family</a>.
-                    </span>
-                    <div class="thread_title">
-                        <a class="thread_link">
-                            Why cat pictures are awesome
-                        </a>
-                    </div>
-                </div>
-                <div class="post_content">
-                    <p>Look at the pretty kitty!</p>
-                    <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
-                </div>
+            <div class="post_content">
+                <p>Nice cat!</p>
             </div>
-            <div class="box_bottom">
+            <div class="post_bottom">
+                <span class="relative_time">
+                5 minutes ago
+            </span>
+            <a class="post_button" title="Share this post">
+                0 <i class="icon-share"></i>
+            </a>
+            <a class="post_button" title="Kudos">
+                0 <i class="icon-thumbs-up"></i>
+            </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="post">
+        <div class="post_picture">
+            <img width="60px" height="60px" src="{{ STATIC_URL }}img/profile_pic.jpg" />
+        </div>
+        <div class="post_container">
+            <div class="post_box_top">
+                <span class="author_name">
+                    <a class="user_link">Rodrigo Menezes</a>
+                </span>
+            </div>
+
+            <div class="post_content">
+                <p>Look at the pretty kitty!</p>
+                <img src="{{ STATIC_URL }}img/place_kitten.jpg" />
+            </div>
+
+            <div class="post_bottom">
                 <span class="relative_time">
                     30 minutes ago
                 </span>
@@ -70,3 +86,26 @@
                 </a>
             </div>
         </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+<script>
+$(document).ready(function(){
+    $('.post_input_text').click(function(e) {
+        $('.post_input_before').hide();
+        $('.post_input_after').show();
+        $('.post_input_after textarea').focus();
+        e.preventDefault();
+        return false;
+    });
+
+    $('.post_cancel').click(function(e) {
+        console.log("Hi");
+        var parent = $(this).parents('.post_container');
+        parent.find('.post_input_before').show();
+        parent.find('.post_input_after').hide();
+    });
+});
+</script>
+{% endblock %}
