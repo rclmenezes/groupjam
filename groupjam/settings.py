@@ -116,7 +116,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'b2g6%90(u&amp;91jk5y40sc#zay-dgqo9j!bdwk6f@&amp;)9zvyghjk='
+SECRET_KEY = 'nopenotongithub'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -206,8 +206,8 @@ LOGGING = {
 # S3 stuff
 DEFAULT_FILE_STORAGE = 'groupjam.s3utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = 'groupjam.s3utils.StaticRootS3BotoStorage'
-AWS_ACCESS_KEY_ID = 'AKIAI4SWCSSRK3ZEATCA'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'lolnopenothere'
+AWS_SECRET_ACCESS_KEY = 'lolnope
 AWS_PRELOAD_METADATA = True
 COMPRESS_ROOT = STATIC_ROOT
 COMPRESS_URL = S3_URL
